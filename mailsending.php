@@ -1,12 +1,24 @@
 <?php
-$name = $_POST['name'];
-$email = $_POST['email'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
-$formcontent=" From: $name \ Email: $Email\ Subject: $subject \ Message: $message"
-$recipient = "libertycallproductions@yahoo.COM";
-$subject = "Contact Form";
-$mailheader = "from: $email \r\n"
-mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-echo "Your message has been submitted! Thank You!" . " " . "<a href='form.html style='text-decoration:none;color:#ff0099;'> </a>";
+$a=$_POST['a'];
+$b=$_POST['b'];
+$c=$_POST['c'];
+$d=$_POST['d'];
+$e=$_POST['e'];
+$aa=$_POST['aa'];
+$ab=$_POST['ab'];
+$p=$_POST['p'];
+$mag=" ".$a." ".$b." ".$c." ".$d." ".$e;
+$to="Gmail you will write to"
+$sub=$a;
+$mag = wordwrap($map, 70);
+#echo $map;
+
+$r=mail($to,$sub,$mag);
+
+    if( $r == true ){
+        echo"script>alert{'mailsent'};<script>"
+    }else{
+        echo"script>alert{'raılure'};<script>"
+    }
+
 ?>
